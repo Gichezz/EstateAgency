@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <section class="registration-section">
+        <div class="registration-section-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut dignissimos itaque laboriosam possimus saepe sapiente sequi velit.
+                A dignissimos ea exercitationem inventore laboriosam perferendis quaerat quod sunt voluptates? Aut!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda atque autem cum deserunt, dolores doloribus enim modi mollitia
+                vitae.</p>
+
+            <h1 style="text-align: center; ">Register here</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" name="btn-reg" value="Register">
+            </form>
+        </div>
+
+    </section>
+
+p{% if messages %}
+    {% for message in messages %}
+        <p style="color: #53d938">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}
